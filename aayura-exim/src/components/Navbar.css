@@ -1,20 +1,95 @@
+/* Navbar.css */
+
+:root {
+    --nav-bg-gradient: linear-gradient(90deg, #0B2A3D, #102F44);
+    --nav-bg-solid: #0B2A3D;
+    --nav-top-bar-bg: #071e2b;
+    --nav-text: #ffffff;
+    --nav-text-secondary: #C9D6DF;
+    --nav-accent: #2E7BBE;
+    /* Logo Blue Accent */
+    --btn-gradient: linear-gradient(135deg, #2E7BBE, #1FA2A8);
+    --btn-glow: rgba(46, 123, 190, 0.4);
+
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Poppins', sans-serif;
+}
+
+/* TOP MINI BAR */
+.top-bar {
+    background-color: var(--nav-top-bar-bg);
+    color: var(--nav-text-secondary);
+    font-size: 0.85rem;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.top-bar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-bar-left {
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.top-bar-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.top-link {
+    color: var(--nav-text-secondary);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.3s;
+}
+
+.top-link:hover {
+    color: var(--nav-text);
+}
+
+.separator {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.lang-selector {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--nav-text);
+}
+
+/* MAIN NAVBAR */
 .navbar {
     position: fixed;
+    /* Fixed as per user request to 'move with it' */
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
-    padding: 15px 0;
+    height: 96px;
+    /* EXPORT STANDARD HEIGHT */
+    display: flex;
+    /* Ensure flex context for vertical centering if needed */
+    align-items: center;
+    background: var(--nav-bg-gradient);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
-    background: var(--color-primary-dark);
-    /* Deep Walnut - Sticky by default */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 0;
 }
 
 .navbar.scrolled {
-    background: var(--color-primary-dark);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    padding: 10px 0;
+    height: 80px;
+    /* Slightly compact on scroll, but keeping presence */
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.25);
 }
 
 .nav-container {
@@ -22,93 +97,154 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    max-width: var(--container-width);
-    margin: 0 auto;
-    padding: 0 20px;
+    max-width: 100% !important;
+    /* Force full width overriding global container */
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 40px !important;
+    /* Added 40px padding to move away from extreme corner */
+    height: 100%;
 }
 
+/* LOGO - LEFT SECTION (~30-35%) */
 .logo-link {
     display: flex;
     align-items: center;
-    gap: 12px;
     text-decoration: none;
+    flex-basis: 30%;
+    /* Removing gap completely to pull text left */
+    column-gap: 0px;
 }
 
 .logo-img {
-    height: 50px;
+    /* Increased to 86px per user request */
+    height: 86px !important;
+    max-height: 100%;
     width: auto;
     transition: all 0.3s ease;
     filter: brightness(0) invert(1);
-    /* Always white on dark nav */
+    align-self: center;
+    /* Ensure it centers itself in flex container */
+}
+
+/* Shrink logo on scroll to fit smaller navbar */
+.navbar.scrolled .logo-img {
+    height: 60px !important;
+    transition: height 0.3s ease;
 }
 
 .logo-text {
-    font-family: var(--font-heading);
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: white;
-    /* Always white */
+    font-family: 'Playfair Display', serif;
+    /* Requested Serif */
+    font-size: 28px;
+    /* Prominent but professional */
+    font-weight: 600;
+    /* Semi-Bold */
+    color: var(--nav-text);
     text-transform: uppercase;
-    letter-spacing: 1.5px;
-    text-shadow: none;
+    letter-spacing: 0.01em;
+    /* +1% max */
+    line-height: 1;
+    white-space: nowrap;
+    /* Single line enforced */
+    /* Pulling closer to logo with negative margin */
+    margin-left: -10px;
+    align-self: center;
+    display: block;
 }
 
-/* Scrolled State for Logo */
-.navbar.scrolled .logo-img {
-    height: 45px;
-    filter: brightness(0) invert(1);
-    /* Keep white */
-}
-
-.navbar.scrolled .logo-text {
-    color: white;
-    /* Keep white */
-}
-
-/* Navigation Links */
+/* NAV LINKS - CENTER SECTION (~45-50%) */
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 30px;
+    justify-content: center;
+    flex-basis: 50%;
+    /* Visual Balance Rule */
+    gap: 0;
+    /* Handled by margin on items */
 }
 
 .nav-item,
 .navbar-link {
-    color: rgba(255, 255, 255, 0.85);
-    /* Off-white text */
-    font-family: var(--font-body);
+    color: var(--nav-text);
+    font-family: var(--font-heading);
     font-weight: 500;
-    font-size: 0.95rem;
+    font-size: 15px;
+    /* CORRECT SIZE per requests */
     cursor: pointer;
-    transition: all 0.3s ease;
     text-decoration: none;
-    padding: 5px 0;
+    transition: all 0.2s ease;
     position: relative;
-    letter-spacing: 0.5px;
+    padding: 5px 0;
+    margin: 0 16px;
+    /* 14-16px margin => 28-32px spacing */
+    text-transform: capitalize;
 }
 
+/* Hover Effect: Color change + Thin underline */
 .nav-item:hover,
 .navbar-link:hover {
-    color: var(--color-saffron);
-    /* Gold hover effect */
+    color: var(--nav-accent);
+    /* Logo Blue Accent */
 }
 
-/* Scrolled link styles - keep white/gold */
-.navbar.scrolled .nav-item,
-.navbar.scrolled .navbar-link {
-    color: rgba(255, 255, 255, 0.85);
+.nav-item::after,
+.navbar-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--nav-accent);
+    transition: width 0.3s ease;
 }
 
-.navbar.scrolled .nav-item:hover,
-.navbar.scrolled .navbar-link:hover {
-    color: var(--color-saffron);
+.nav-item:hover::after,
+.navbar-link:hover::after {
+    width: 100%;
 }
 
-.nav-btn {
-    margin-left: 20px;
+/* CTA BUTTON - RIGHT SECTION (~15-20%) */
+.nav-right-cta {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-basis: 20%;
+    /* Visual Balance Rule */
 }
 
-/* Mobile Toggle */
+.btn-cta {
+    background: var(--btn-gradient);
+    color: white;
+    height: 44px;
+    /* CORRECT HEIGHT */
+    padding: 0 24px;
+    /* CORRECT PADDING */
+    border-radius: 6px;
+    /* Slightly tighter radius usually looks more corporate tech */
+    font-family: var(--font-heading);
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 0.9rem;
+    /* 14-15px equivalent */
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-cta:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 15px var(--btn-glow);
+    color: white;
+}
+
+/* MOBILE TOGGLE */
 .mobile-menu-toggle {
     display: none;
     flex-direction: column;
@@ -117,19 +253,40 @@
 }
 
 .bar {
-    width: 30px;
+    width: 28px;
     height: 3px;
     background-color: white;
     transition: all 0.3s;
+    border-radius: 2px;
 }
 
-.navbar.scrolled .bar {
-    background-color: white;
-    /* Always white */
+/* MOBILE RESPONSIVE */
+.mobile-cta-container {
+    display: none;
 }
 
-/* Mobile Responsive */
+@media (max-width: 992px) {
+    .nav-links {
+        gap: 15px;
+    }
+
+    .nav-item,
+    .navbar-link {
+        font-size: 0.9rem;
+    }
+}
+
 @media (max-width: 900px) {
+    .top-bar {
+        display: none;
+        /* Often hide top bar on mobile or simplify */
+    }
+
+    .nav-right-cta {
+        display: none;
+        /* Hide desktop CTA */
+    }
+
     .mobile-menu-toggle {
         display: flex;
     }
@@ -139,16 +296,19 @@
         top: 100%;
         left: 0;
         width: 100%;
-        background: var(--color-primary-dark);
+        background: var(--nav-bg-solid);
+        /* Solid color for menu */
         flex-direction: column;
+        align-items: center;
+        /* Center align items */
         padding: 40px 20px;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        transform: translateY(-10px);
+        transform: translateY(-20px);
         opacity: 0;
         visibility: hidden;
         transition: all 0.3s ease;
         gap: 20px;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
     }
 
     .nav-links.active {
@@ -160,18 +320,36 @@
     .nav-item,
     .navbar-link {
         color: white;
+        /* Reset hover color override for mobile consistency */
         font-size: 1.1rem;
         width: 100%;
         text-align: center;
-        display: block;
-        padding: 12px 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.03);
     }
 
-    .nav-btn {
-        margin-left: 0;
+    .nav-item:hover,
+    .navbar-link:hover {
+        color: var(--nav-accent);
+        /* Keep hover color */
+    }
+
+    .nav-item::after,
+    .navbar-link::after {
+        display: none;
+        /* Remove underline on mobile */
+    }
+
+    .mobile-cta-container {
+        display: block;
+        margin-top: 20px;
         width: 100%;
         text-align: center;
-        margin-top: 10px;
+    }
+
+    .mobile-cta {
+        width: 100%;
+        display: block;
+        padding: 14px 0;
     }
 }

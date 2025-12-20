@@ -125,18 +125,5 @@ export const productData = {
             { id: "f12", name: "Semi Husked Coconut", desc: "Mature, fresh coconuts with partial husk, rich water content.", category: "Fruits", image: prodCoconutSemiHusked }
         ]
     },
-    "rice-beans": {
-        title: "Rice & Pulses",
-        subtitle: "The finest Indian grains, sorted and polished for global kitchens.",
-        heroImage: imgRice,
-        items: [
-            { id: "r1", name: "1121 Basmati Rice", desc: "Extra long grain, aromatic, best for biryani.", category: "Basmati Rice", image: defaultImages.rice },
-            { id: "r2", name: "1509 Basmati Rice", desc: "Long grain, cost-effective basmati variety.", category: "Basmati Rice", image: defaultImages.rice },
-            { id: "r3", name: "Sona Masoori Rice", desc: "Medium grain, lightweight and aromatic.", category: "Non-Basmati Rice", image: defaultImages.rice },
-            { id: "r4", name: "IR 64 Rice", desc: "Long/Medium grain, widely used for daily consumption.", category: "Non-Basmati Rice", image: defaultImages.rice },
-            { id: "p1", name: "Chick Peas (Kabuli Chana)", desc: "Large white chickpeas, high protein.", category: "Pulses", image: prodChickpeasKabuli },
-            { id: "p2", name: "Mung Dal", desc: "Split green gram, cleaned and sorted.", category: "Pulses", image: prodMungDal },
-            { id: "p3", name: "Toor Dal", desc: "Pigeon peas split, staple Indian lentil.", category: "Pulses", image: prodToorDal }
-        ]
-    }
+
 };

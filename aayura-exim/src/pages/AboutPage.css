@@ -7,7 +7,7 @@
 .about-hero {
     height: 60vh;
     min-height: 400px;
-    background: url('../assets/images/bg_global_map.png') no-repeat center center/cover;
+    background: url('../assets/images/about_hero_real.png') no-repeat center center/cover;
     position: relative;
     display: flex;
     align-items: center;
@@ -23,8 +23,8 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(27, 77, 62, 0.9), rgba(18, 51, 41, 0.95));
-    /* Brand Green Overlay */
+    background: linear-gradient(135deg, rgba(27, 77, 62, 0.6), rgba(18, 51, 41, 0.7));
+    /* Brand Green Overlay - Reduced opacity */
     z-index: 1;
 }
 
@@ -33,14 +33,22 @@
     font-weight: 800;
     margin-bottom: 15px;
     letter-spacing: -1px;
+    color: #ffffff;
+    /* Explicit White */
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+    /* Strong Shadow */
 }
 
 .about-hero p {
-    font-size: 1.25rem;
-    font-weight: 300;
-    opacity: 0.9;
-    max-width: 600px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #ffffff;
+    /* Explicit White (Same as H1) */
+    opacity: 1;
+    max-width: 700px;
     margin: 0 auto;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+    /* Strong Shadow (Same as H1) */
 }
 
 /* Sections General */
@@ -75,14 +83,64 @@
 
 /* Specific creative styles for Certs Section */
 .about-certs {
-    background: linear-gradient(rgba(44, 24, 16, 0.9), rgba(44, 24, 16, 0.9)), url('../assets/images/bg_wood_dark.png') repeat center center;
+    background: url('../assets/images/bg_wood_light.png') repeat center center;
     background-size: cover;
     padding: 80px 0;
-    color: white;
+    text-align: left;
+    /* Keep left align as requested */
+}
+
+/* ... (keep subtitle styles) ... */
+
+.about-certs h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 3.5rem;
+    color: var(--color-brand-blue);
+    /* Restore Brand Blue */
+    margin-bottom: 20px;
     text-align: left;
 }
 
-/* ... (keep middle styles) ... */
+.about-certs .section-desc {
+    font-size: 1.2rem;
+    color: var(--color-brand-blue-soft);
+    /* Restore Soft Blue */
+    max-width: 600px;
+    margin: 0 0 60px 0;
+    line-height: 1.6;
+    font-style: italic;
+    text-align: left;
+}
+
+/* Marquee Styles for About Page */
+.about-certs-container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    padding: 20px 0;
+    margin-top: 50px;
+}
+
+.about-certs-track {
+    display: flex;
+    width: max-content;
+    animation: scrollAbout 40s linear infinite;
+    gap: 0;
+}
+
+.about-certs-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scrollAbout {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
 
 .about-cert-card {
     background: transparent;
@@ -92,8 +150,8 @@
     align-items: center;
     justify-content: center;
     min-width: 350px;
-    border-right: 1px solid rgba(255, 255, 255, 0.2);
-    /* Light separator for dark bg */
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    /* Dark separator for light bg */
     box-sizing: border-box;
 }
 
@@ -101,8 +159,7 @@
     height: 220px;
     width: auto;
     object-fit: contain;
-    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.3));
-    /* Stronger shadow */
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.15));
     transition: transform 0.3s ease;
 }
 
@@ -113,8 +170,8 @@
 .about-cert-card h4 {
     margin-top: 20px;
     font-size: 1.5rem;
-    color: white;
-    /* Changed to white for visibility */
+    color: var(--color-primary);
+    /* Restore dark color */
     font-weight: 700;
 }
 
@@ -134,4 +191,223 @@
     .cert-grid {
         grid-template-columns: 1fr;
     }
+}
+
+/* Restored Missing Styles & New What We Do Section */
+
+.about-content p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.about-image-wrapper {
+    position: relative;
+}
+
+.about-image-wrapper img {
+    border-radius: 12px;
+    box-shadow: 20px 20px 0 var(--color-accent);
+    width: 100%;
+    height: auto;
+}
+
+.stats-mini {
+    display: flex;
+    gap: 40px;
+    margin-top: 40px;
+    border-top: 1px solid #eee;
+    padding-top: 40px;
+}
+
+.stats-mini div {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.stats-mini strong {
+    font-size: 2.5rem;
+    color: var(--color-primary);
+    line-height: 1;
+    margin-bottom: 5px;
+}
+
+/* Vision & Mission - Creative Boxing */
+.about-vision {
+    background: url('../assets/images/bg_wood_light.png') repeat center center;
+    background-size: cover;
+    padding: 80px 0;
+}
+
+.vision-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.vision-card {
+    background: white;
+    padding: 50px 40px;
+    /* Generous spacing */
+    border-radius: 4px;
+    /* Reduced radius */
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    /* Thin subtle border */
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+    /* Very subtle shadow */
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    /* Equal height cards */
+}
+
+.vision-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+    border-color: var(--color-brand-blue);
+    /* Accent color on hover */
+}
+
+.vision-card .icon {
+    /* Minimal styling - no circle background */
+    margin-bottom: 25px;
+    color: var(--color-brand-blue);
+    /* Monochrome accent color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.vision-card:hover .icon {
+    transform: scale(1.1);
+    color: var(--color-accent);
+}
+
+.vision-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--color-primary-dark);
+    font-family: 'Playfair Display', serif;
+    /* Specified Serif */
+    font-weight: 600;
+    /* Semi-Bold */
+    letter-spacing: 0.01em;
+    /* +1% letter spacing */
+    text-transform: uppercase;
+}
+
+.vision-card p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.7;
+    /* Increased line-height */
+    font-family: 'Open Sans', sans-serif;
+    /* Specified Sans-Serif */
+    font-weight: 400;
+    /* Regular */
+}
+
+/* What We Do Section */
+.what-we-do {
+    background: white;
+}
+
+.what-we-do-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.what-we-do-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--color-primary);
+}
+
+.what-we-do-content .lead-text {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 30px;
+    font-style: italic;
+    border-left: 4px solid var(--color-accent);
+    padding-left: 20px;
+}
+
+.capabilities-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 30px;
+}
+
+.capabilities-list li {
+    margin-bottom: 15px;
+    padding-left: 30px;
+    position: relative;
+    font-size: 1.05rem;
+    color: #444;
+}
+
+.capabilities-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+    font-weight: bold;
+}
+
+@media (max-width: 900px) {
+    .what-we-do-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Vision Updates */
+.card-subtitle {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-accent);
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.vision-card h3 {
+    margin-bottom: 5px !important;
+    /* Reduce gap to subtitle */
+}
+
+.values-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+    text-align: left;
+    width: 100%;
+}
+
+.values-list li {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding-bottom: 5px;
+}
+
+.values-list li:last-child {
+    border-bottom: none;
+}
+
+.values-list strong {
+    color: var(--color-primary);
+    /* Deep Green/Brown */
+    font-weight: 700;
 }

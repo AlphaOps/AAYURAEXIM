@@ -40,12 +40,7 @@ const products = [
         desc: 'Onion flakes, Garlic powder, and dried vegetables with long shelf life and high nutrition.',
         image: imgDehydrated
     },
-    {
-        id: 'rice-beans',
-        title: 'Rice & Beans',
-        desc: 'Premium Basmati Rice, Non-Basmati Rice, and Pulses sourced from the best fields in India.',
-        image: imgRice
-    },
+
     {
         id: 'herbal-products',
         title: 'Herbal Products',

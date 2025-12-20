@@ -1,0 +1,135 @@
+.cta-banner {
+    position: relative;
+    background-color: #1E2A35;
+    /* Dark Navy as requested */
+    padding: 100px 0;
+    overflow: hidden;
+    color: #fff;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.cta-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Map overlay styles removed */
+
+.relative-z {
+    position: relative;
+    z-index: 2;
+}
+
+.cta-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+/* Responsive wrap */
+@media (max-width: 992px) {
+    .cta-content {
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+    }
+
+
+}
+
+.cta-text-group h2 {
+    font-family: 'Playfair Display', serif;
+    /* Elegant Serif */
+    font-size: 2.5rem;
+    /* 36-40px equivalent */
+    font-weight: 600;
+    /* Semi-Bold */
+    line-height: 1.2;
+    color: #F5F5F5;
+    /* Off-white */
+    margin-bottom: 20px;
+    max-width: 600px;
+}
+
+.cta-text-group p {
+    font-family: 'Open Sans', sans-serif;
+    /* Modern Sans */
+    font-size: 1.1rem;
+    /* 16-18px equivalent */
+    font-weight: 400;
+    /* Regular */
+    line-height: 1.6;
+    color: #D1D1D1;
+    /* Light Grey */
+    max-width: 480px;
+    /* Reduced specific max-width as requested */
+}
+
+@media (max-width: 992px) {
+
+    .cta-text-group h2,
+    .cta-text-group p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.cta-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+@media (max-width: 992px) {
+    .cta-actions {
+        align-items: center;
+    }
+}
+
+.btn-primary-cta {
+    background-color: var(--color-brand-blue, #007bff);
+    /* Fallback blue */
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 500;
+    /* Medium */
+    padding: 14px 28px;
+    border-radius: 6px;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-primary-cta:hover {
+    background-color: #0062cc;
+    /* Slightly darker */
+    transform: translateY(-2px);
+    /* Upward motion */
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.4);
+    color: white;
+}
+
+.btn-secondary-link {
+    color: #D1D1D1;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.95rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.3s ease;
+}
+
+.btn-secondary-link:hover {
+    color: white;
+}

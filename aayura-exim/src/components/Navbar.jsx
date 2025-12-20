@@ -1,16 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { Mail, Phone, Globe } from 'lucide-react';
 import './Navbar.css';
 import logo from '../assets/images/logo_main.png';
 
-// NavHashLink definition moved inside or below
-
-
-// Helper component for navigation links that handle hash scrolling and menu closing
-// Moved outside to prevent re-creation on every render
 // Helper component for navigation links
 const NavHashLink = ({ to, children, setOpen }) => {
-    // If we are navigating to a hash
     if (to.includes('#')) {
         return (
             <a href={to} className="navbar-link" onClick={() => setOpen(false)}>
@@ -44,30 +39,60 @@ const Navbar = () => {
     }, [scrolled]);
 
     return (
-        <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
-            <div className="container nav-container">
-                <Link to="/" className="logo-link">
-                    <img src={logo} alt="AAYURA EXIM Logo" className="logo-img" />
-                    <span className="logo-text">AAYURA EXIM</span>
-                </Link>
-
-                <div className={`nav-links ${mobileMenuOpen ? 'active' : ''}`}>
-                    <Link to="/" className="nav-item" onClick={() => setMobileMenuOpen(false)}>Home</Link>
-                    <Link to="/about" className="nav-item" onClick={() => setMobileMenuOpen(false)}>About Us</Link>
-                    <NavHashLink to="/#products" setOpen={setMobileMenuOpen}>Products</NavHashLink>
-                    <NavHashLink to="/#quality" setOpen={setMobileMenuOpen}>Quality</NavHashLink>
-                    <NavHashLink to="/#why-us" setOpen={setMobileMenuOpen}>Why Us</NavHashLink>
-                    <Link to="/contact" className="nav-item" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
-                    <Link to="/contact" className="btn btn-primary nav-btn" onClick={() => setMobileMenuOpen(false)}>Enquire Now</Link>
-                </div>
-
-                <div className="mobile-menu-toggle" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-                    <span className="bar"></span>
-                    <span className="bar"></span>
-                    <span className="bar"></span>
+        <header className="site-header">
+            {/* TOP MINI BAR */}
+            <div className="top-bar">
+                <div className="container top-bar-content">
+                    <div className="top-bar-left">
+                        <span>Serving Global Markets | Trusted Export Partner</span>
+                    </div>
+                    <div className="top-bar-right">
+                        <a href="mailto:info@aayuraexim.com" className="top-link"><Mail size={14} /> info@aayuraexim.com</a>
+                        <span className="separator">|</span>
+                        <a href="https://wa.me/919850847425" target="_blank" rel="noopener noreferrer" className="top-link"><Phone size={14} /> +91 98508 47425</a>
+                        <span className="separator">|</span>
+                        <span className="lang-selector"><Globe size={14} /> EN</span>
+                    </div>
                 </div>
             </div>
-        </nav>
+
+            {/* MAIN NAVBAR */}
+            <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
+                <div className="container nav-container">
+                    {/* LEFT: LOGO */}
+                    <Link to="/" className="logo-link">
+                        <img src={logo} alt="AAYURA EXIM Logo" className="logo-img" />
+                        <span className="logo-text">AAYURA EXIM</span>
+                    </Link>
+
+                    {/* CENTER: MENU */}
+                    <div className={`nav-links ${mobileMenuOpen ? 'active' : ''}`}>
+                        <Link to="/" className="nav-item" onClick={() => setMobileMenuOpen(false)}>Home</Link>
+                        <Link to="/about" className="nav-item" onClick={() => setMobileMenuOpen(false)}>About Us</Link>
+                        <NavHashLink to="/#products" setOpen={setMobileMenuOpen}>Products</NavHashLink>
+                        <Link to="/blog" className="nav-item" onClick={() => setMobileMenuOpen(false)}>Blog</Link>
+                        <Link to="/contact" className="nav-item" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
+
+                        {/* Mobile Only CTA */}
+                        <div className="mobile-cta-container">
+                            <Link to="/contact" className="btn btn-cta mobile-cta" onClick={() => setMobileMenuOpen(false)}>ENQUIRE NOW</Link>
+                        </div>
+                    </div>
+
+                    {/* RIGHT: CTA BUTTON (Desktop) */}
+                    <div className="nav-right-cta">
+                        <Link to="/contact" className="btn btn-cta desktop-cta">ENQUIRE NOW</Link>
+                    </div>
+
+                    {/* MOBILE TOGGLE */}
+                    <div className="mobile-menu-toggle" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+                        <span className="bar"></span>
+                        <span className="bar"></span>
+                        <span className="bar"></span>
+                    </div>
+                </div>
+            </nav>
+        </header>
     );
 };
 

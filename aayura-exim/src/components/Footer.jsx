@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin } from 'lucide-react';
 import './Footer.css';
 
@@ -16,11 +17,11 @@ const Footer = () => {
                 <div className="footer-col">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="#hero">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#products">Products</a></li>
-                        <li><a href="#sourcing">Sourcing Process</a></li>
-                        <li><a href="#contact">Contact Us</a></li>
+                        <li><Link to="/">Home</Link></li>
+                        <li><Link to="/about">About Us</Link></li>
+                        <li><Link to="/#products">Products</Link></li>
+                        <li><Link to="/blog">Blog</Link></li>
+                        <li><Link to="/contact">Contact Us</Link></li>
                     </ul>
                 </div>
 
@@ -29,7 +30,7 @@ const Footer = () => {
                     <ul className="contact-list">
                         <li>
                             <MapPin size={18} />
-                            <span>Registered Office, India</span>
+                            <span>Pune, Maharashtra, India</span>
                         </li>
                         <li>
                             <Phone size={18} />
@@ -37,7 +38,7 @@ const Footer = () => {
                         </li>
                         <li>
                             <Mail size={18} />
-                            <span>export@aayuraexim.com</span>
+                            <span>info@aayuraexim.com<br />aayuraexim@gmail.com</span>
                         </li>
                     </ul>
                 </div>

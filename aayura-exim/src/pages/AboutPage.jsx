@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import imgWarehouse from '../assets/images/about_warehouse.png';
+import { Eye, Target, ShieldCheck } from 'lucide-react';
+import imgWhoWeAre from '../assets/images/about_who_we_are_trust.png';
+import imgFarmToPort from '../assets/images/about_farm_to_port.png';
 import certApedaNew from '../assets/images/cert_apeda_new.png';
 import certFieo from '../assets/images/cert_fieo_v2.png';
 import certSpicesBoard from '../assets/images/cert_spices_board_new.png';
@@ -10,6 +12,7 @@ import certHalal from '../assets/images/cert_halal_v3.png';
 import certMsme from '../assets/images/cert_msme_new.png';
 import certUdyogAadhar from '../assets/images/cert_udyog_aadhar_new.png';
 import certCoconut from '../assets/images/cert_coconut_board_new.png';
+import CtaBanner from '../components/CtaBanner';
 import './AboutPage.css';
 
 const AboutPage = () => {
@@ -40,14 +43,10 @@ const AboutPage = () => {
                             <p>
                                 Our journey began with a simple vision: to share the purity of Indian spices and fresh produce with the world. Today, we stand as a symbol of trust, quality, and reliability.
                             </p>
-                            <div className="stats-mini">
-                                <div><strong>10+</strong> Years Experience</div>
-                                <div><strong>50+</strong> Global Clients</div>
-                                <div><strong>20+</strong> Countries Served</div>
-                            </div>
+
                         </div>
                         <div className="about-image-wrapper">
-                            <img src={imgWarehouse} alt="Our Infrastructure" />
+                            <img src={imgWhoWeAre} alt="Trusted Global Sourcing Partner" />
                         </div>
                     </div>
                 </div>
@@ -57,19 +56,57 @@ const AboutPage = () => {
                 <div className="container">
                     <div className="vision-grid">
                         <div className="vision-card">
-                            <div className="icon">👁️</div>
-                            <h3>Our Vision</h3>
-                            <p>To become the most preferred and trusted partner for global sourcing of Indian agricultural products, known for our commitment to quality and integrity.</p>
+                            <div className="icon"><Eye size={32} strokeWidth={1.5} /></div>
+                            <h3>OUR VISION</h3>
+                            <span className="card-subtitle">Global Recognition</span>
+                            <p>To become a globally recognized agricultural export partner, trusted for consistent quality, ethical trade practices, and long-term international relationships.</p>
                         </div>
                         <div className="vision-card">
-                            <div className="icon">🚀</div>
-                            <h3>Our Mission</h3>
-                            <p>To empower Indian farmers by taking their produce to global markets while ensuring our international clients receive only the freshest, premium-grade products.</p>
+                            <div className="icon"><Target size={32} strokeWidth={1.5} /></div>
+                            <h3>OUR MISSION</h3>
+                            <span className="card-subtitle">Excellence Delivered</span>
+                            <p>To empower Indian farmers and global buyers by delivering premium-grade agricultural products through transparent processes, sustainable sourcing, and reliable export execution.</p>
                         </div>
                         <div className="vision-card">
-                            <div className="icon">💎</div>
-                            <h3>Core Values</h3>
-                            <p>Integrity, Quality, Transparency, and Customer Satisfaction are the pillars of our business operations.</p>
+                            <div className="icon"><ShieldCheck size={32} strokeWidth={1.5} /></div>
+                            <h3>CORE VALUES</h3>
+                            <span className="card-subtitle">Uncompromising Standards</span>
+                            <ul className="values-list">
+                                <li><strong>Integrity</strong> — Honest trade & transparent communication</li>
+                                <li><strong>Quality Excellence</strong> — No compromise, at any stage</li>
+                                <li><strong>Customer Commitment</strong> — Long-term partnerships over short-term gains</li>
+                                <li><strong>Sustainability</strong> — Responsible sourcing & environmental care</li>
+                                <li><strong>Reliability</strong> — Consistent supply & on-time delivery</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section className="section what-we-do">
+                <div className="container">
+                    <div className="what-we-do-grid">
+                        <div className="what-we-do-content">
+                            <span className="subtitle">What We Do</span>
+                            <h2>From Indian Farms to Global Markets</h2>
+                            <p className="lead-text">
+                                AAYURA EXIM specializes in sourcing, processing, and exporting premium-quality Indian agricultural products to buyers across the globe.
+                            </p>
+                            <p>
+                                We manage the complete export lifecycle — from farm selection to final delivery — ensuring consistency, freshness, and compliance at every stage.
+                                Our operations are built on strong farmer partnerships, modern quality control systems, and internationally accepted export practices.
+                            </p>
+
+                            <ul className="capabilities-list">
+                                <li>Direct sourcing from verified Indian farmers</li>
+                                <li>Multi-level quality inspection & grading</li>
+                                <li>Export-compliant packaging & labeling</li>
+                                <li>End-to-end logistics & documentation</li>
+                                <li>Customized orders as per buyer specifications</li>
+                            </ul>
+                        </div>
+                        <div className="about-image-wrapper">
+                            <img src={imgFarmToPort} alt="From Indian Farms to Global Markets" />
                         </div>
                     </div>
                 </div>
@@ -118,13 +155,7 @@ const AboutPage = () => {
                 </div>
             </section>
 
-            <section className="section cta-section">
-                <div className="container text-center">
-                    <h2>Ready to Partner with Us?</h2>
-                    <p>Get in touch for premium quality sourcing.</p>
-                    <Link to="/contact" className="btn btn-primary">Contact Us Now</Link>
-                </div>
-            </section>
+            <CtaBanner />
         </div>
     );
 };

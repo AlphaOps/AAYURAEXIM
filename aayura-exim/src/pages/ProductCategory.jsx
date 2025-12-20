@@ -51,7 +51,7 @@ const ProductCategory = () => {
                     </div>
 
                     <div style={{ marginTop: '60px', textAlign: 'center' }}>
-                        <Link to="/" className="btn btn-outline">← Back to All Categories</Link>
+                        <Link to="/#products" className="btn btn-outline">← Back to All Categories</Link>
                     </div>
                 </div>
             </section>

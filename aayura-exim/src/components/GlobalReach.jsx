@@ -39,9 +39,9 @@ const GlobalReach = () => {
                 </div>
 
                 <div className="stats-grid">
-                    <StatCounter end={25} duration={2000} label="Countries Served" />
+                    <StatCounter end={75} duration={2000} label="Countries" />
                     <StatCounter end={150} duration={2000} label="Product Varieties" />
-                    <StatCounter end={500} duration={2500} label="Happy Clients" />
+                    <StatCounter end={2500} duration={2500} label="Happy Clients" />
                     <StatCounter end={5000} duration={3000} label="Tons Exported" />
                 </div>
 

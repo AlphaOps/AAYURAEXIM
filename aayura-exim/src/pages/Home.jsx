@@ -1,16 +1,26 @@
 import React, { useEffect } from 'react';
+import { useLocation } from 'react-router-dom'; // Import useLocation
 import Hero from '../components/Hero';
 import ValueStrip from '../components/ValueStrip';
 import Products from '../components/Products';
 import GlobalReach from '../components/GlobalReach';
-import WhyUs from '../components/WhyUs';
-import Quality from '../components/Quality';
-// Removed: Sourcing, Organic, Contact (from old layout)
+import Certificates from '../components/Certificates';
 
 const Home = () => {
+    const location = useLocation();
+
     useEffect(() => {
-        window.scrollTo(0, 0);
-    }, []);
+        if (location.hash) {
+            const element = document.getElementById(location.hash.substring(1));
+            if (element) {
+                setTimeout(() => {
+                    element.scrollIntoView({ behavior: 'auto', block: 'start' });
+                }, 100);
+            }
+        } else {
+            window.scrollTo(0, 0);
+        }
+    }, [location]);
 
     return (
         <div className="home-page">
@@ -83,9 +93,8 @@ const Home = () => {
             </section>
 
             <Products />
-            <Quality />
             <GlobalReach />
-            <WhyUs />
+            <Certificates />
 
             {/* CTA Section */}
             <section className="section" style={{ backgroundColor: '#FAF7F2', padding: '100px 0', textAlign: 'center' }}>
