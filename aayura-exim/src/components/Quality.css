@@ -1,0 +1,107 @@
+.quality {
+    background-color: white;
+    padding: 150px 0;
+    /* Bigger Section Height */
+    border-top: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.quality-content {
+    display: flex;
+    flex-direction: row;
+    /* Sleeping / Horizontal Layout */
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    /* Reduced gap - Stretched Layout */
+    width: 100%;
+}
+
+/* ... (skip list styles) ... */
+
+/* Marquee Styles */
+.certs-container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    margin-left: 10px;
+    padding: 30px 0;
+}
+
+.certs-track {
+    display: flex;
+    width: max-content;
+    animation: scroll 80s linear infinite;
+    /* Slowed down */
+    gap: 80px;
+    /* Huge gap */
+}
+
+.certs-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.cert-card {
+    background: white;
+    padding: 30px 50px;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    display: flex;
+    /* Horizontal Layout inside card */
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    height: 240px;
+    /* MASSIVE HEIGHT */
+    min-width: 650px;
+    /* MASSIVE WIDTH */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
+    white-space: normal;
+    /* Allow text wrapping inside */
+}
+
+.cert-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.cert-img {
+    /* Styles handled inline or here */
+}
+
+.cert-label {
+    /* Removed, handled inline */
+}
+
+@media (max-width: 900px) {
+    .quality-content {
+        flex-direction: column;
+        /* Stack vertically on mobile */
+        gap: 40px;
+        text-align: center;
+    }
+
+    .quality-text h2 {
+        text-align: center !important;
+    }
+
+    .quality-text div {
+        /* The divider line */
+        margin: 0 auto 25px auto !important;
+    }
+
+    .quality-list {
+        display: inline-block;
+        text-align: left;
+    }
+}

@@ -1,0 +1,177 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 15px 0;
+    transition: all 0.3s ease;
+    background: var(--color-primary-dark);
+    /* Deep Walnut - Sticky by default */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.navbar.scrolled {
+    background: var(--color-primary-dark);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    padding: 10px 0;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.logo-img {
+    height: 50px;
+    width: auto;
+    transition: all 0.3s ease;
+    filter: brightness(0) invert(1);
+    /* Always white on dark nav */
+}
+
+.logo-text {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: white;
+    /* Always white */
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-shadow: none;
+}
+
+/* Scrolled State for Logo */
+.navbar.scrolled .logo-img {
+    height: 45px;
+    filter: brightness(0) invert(1);
+    /* Keep white */
+}
+
+.navbar.scrolled .logo-text {
+    color: white;
+    /* Keep white */
+}
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-item,
+.navbar-link {
+    color: rgba(255, 255, 255, 0.85);
+    /* Off-white text */
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    padding: 5px 0;
+    position: relative;
+    letter-spacing: 0.5px;
+}
+
+.nav-item:hover,
+.navbar-link:hover {
+    color: var(--color-saffron);
+    /* Gold hover effect */
+}
+
+/* Scrolled link styles - keep white/gold */
+.navbar.scrolled .nav-item,
+.navbar.scrolled .navbar-link {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.navbar.scrolled .nav-item:hover,
+.navbar.scrolled .navbar-link:hover {
+    color: var(--color-saffron);
+}
+
+.nav-btn {
+    margin-left: 20px;
+}
+
+/* Mobile Toggle */
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.bar {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    transition: all 0.3s;
+}
+
+.navbar.scrolled .bar {
+    background-color: white;
+    /* Always white */
+}
+
+/* Mobile Responsive */
+@media (max-width: 900px) {
+    .mobile-menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--color-primary-dark);
+        flex-direction: column;
+        padding: 40px 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        transform: translateY(-10px);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        gap: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-links.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav-item,
+    .navbar-link {
+        color: white;
+        font-size: 1.1rem;
+        width: 100%;
+        text-align: center;
+        display: block;
+        padding: 12px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .nav-btn {
+        margin-left: 0;
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+    }
+}

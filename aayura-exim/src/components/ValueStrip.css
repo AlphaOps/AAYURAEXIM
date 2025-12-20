@@ -1,0 +1,94 @@
+.value-strip {
+    padding: 60px 0;
+    background-color: transparent;
+    /* Show wood background */
+    position: relative;
+    z-index: 10;
+    margin: 60px 0;
+    /* Balanced gap top and bottom */
+}
+
+.value-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.value-block {
+    padding: 40px 30px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.value-block:hover {
+    transform: translateY(-5px);
+}
+
+/* Muted Spice Palette Backgrounds */
+.block-saffron {
+    background-color: #F9E79F;
+    /* Soft Saffron */
+    color: #7D6608;
+}
+
+.block-olive {
+    background-color: #D4EFDF;
+    /* Soft Olive */
+    color: #145A32;
+}
+
+.block-turmeric {
+    background-color: #FDEBD0;
+    /* Soft Turmeric */
+    color: #935116;
+}
+
+.block-chilli {
+    background-color: #FADBD8;
+    /* Soft Chilli Red */
+    color: #78281F;
+}
+
+.value-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.value-block h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: inherit;
+    /* Use the dark contrast color defined in block */
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.value-block p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    opacity: 0.9;
+    font-weight: 500;
+}
+
+@media (max-width: 992px) {
+    .value-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .value-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .value-strip {
+        margin-top: 0;
+        padding: 40px 0;
+    }
+}

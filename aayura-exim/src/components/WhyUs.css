@@ -1,0 +1,56 @@
+.why-us {
+    background-color: var(--color-bg-white);
+    padding: 100px 0;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.feature-card {
+    text-align: center;
+    padding: 40px 20px;
+    border-radius: var(--border-radius-md);
+    border: 1px solid var(--color-border);
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transform: translateY(-5px);
+}
+
+.icon-box {
+    color: var(--color-primary);
+    margin-bottom: 20px;
+    background-color: var(--color-bg-light-green);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover .icon-box {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.feature-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 15px;
+    color: var(--color-text);
+    font-weight: 600;
+}
+
+.feature-card p {
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+}

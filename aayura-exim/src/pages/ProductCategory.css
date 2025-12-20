@@ -1,0 +1,98 @@
+.hero-small {
+    padding: 120px 0 60px;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+}
+
+.hero-small h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    font-weight: 800;
+}
+
+/* Specific spacing for Inner Page content */
+.product-category-page .section {
+    padding-top: 100px;
+    padding-bottom: 80px;
+}
+
+.sub-product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.sub-product-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+    border: 1px solid #f0f0f0;
+}
+
+.sub-product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.sub-product-image {
+    height: 250px;
+    overflow: hidden;
+}
+
+.sub-product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.sub-product-card:hover .sub-product-image img {
+    transform: scale(1.1);
+}
+
+.sub-product-info {
+    padding: 25px;
+}
+
+.sub-product-info .badge {
+    background-color: var(--color-bg-light);
+    color: var(--color-primary);
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.sub-product-info h3 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    color: var(--color-text);
+}
+
+.sub-product-info p {
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.btn-link {
+    color: var(--color-primary);
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: gap 0.3s ease;
+}
+
+.btn-link:hover {
+    gap: 10px;
+    color: var(--color-accent);
+}

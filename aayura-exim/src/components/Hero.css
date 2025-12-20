@@ -1,0 +1,198 @@
+.hero {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+    margin-top: -80px;
+    padding-top: 80px;
+}
+
+/* Slideshow Container */
+.hero-slideshow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+/* Individual Slide */
+.hero-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out, transform 8s ease-out;
+    /* Smooth Fade & Slow Zoom */
+    transform: scale(1);
+    /* filter: blur(3px) brightness(0.85); - REMOVED per user request */
+    filter: brightness(0.9);
+}
+
+.hero-slide.active {
+    opacity: 1;
+    transform: scale(1.1);
+    /* Subtle "Moving/Scrolling" effect */
+}
+
+/* Dark Gradient Overlay to improve readability */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(20, 10, 5, 0.9) 0%, rgba(62, 39, 35, 0.6) 50%, rgba(62, 39, 35, 0.3) 100%);
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    /* Above overlay */
+    max-width: 900px;
+    padding: 0 20px;
+    animation: fadeUp 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.hero h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: white;
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    /* Deep shadow */
+    letter-spacing: -0.5px;
+    font-family: var(--font-heading);
+    line-height: 1.1;
+}
+
+.hero-subtitle {
+    font-size: 1.35rem;
+    margin-bottom: 50px;
+    color: rgba(255, 255, 255, 0.95);
+    font-weight: 300;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: var(--font-body);
+    letter-spacing: 0.5px;
+}
+
+.hero-cta-group {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Primary CTA: 3D Depth Effect */
+.btn-hero-primary {
+    background: linear-gradient(135deg, #D35400 0%, #BA4A00 100%);
+    /* Burnt Orange Gradient */
+    color: white;
+    padding: 18px 45px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow:
+        0 4px 0 #873600,
+        /* 3D Edge */
+        0 10px 20px rgba(0, 0, 0, 0.3),
+        /* Drop Shadow */
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    /* Top highlight */
+}
+
+.btn-hero-primary:hover {
+    transform: translateY(-4px);
+    /* Lift */
+    box-shadow:
+        0 8px 0 #873600,
+        /* Extended 3D Edge */
+        0 20px 30px rgba(211, 84, 0, 0.4),
+        /* Colored 3D Glow */
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.btn-hero-primary:active {
+    transform: translateY(2px);
+    /* Press down */
+    box-shadow:
+        0 2px 0 #873600,
+        0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Secondary CTA: Glassmorphism */
+.btn-hero-outline {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: white;
+    padding: 18px 45px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.btn-hero-outline:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+        padding: 0 15px;
+    }
+
+    .hero-cta-group {
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .btn-hero-primary,
+    .btn-hero-outline {
+        width: 100%;
+    }
+}
