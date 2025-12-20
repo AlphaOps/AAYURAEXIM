@@ -86,35 +86,44 @@ const ContactPage = () => {
                             <h2>Send Us Your Inquiry</h2>
                             <p>Tell us about your product requirement, destination country, and quantity.</p>
                         </div>
-                        <form className="tech-form" onSubmit={handleSubmit}>
+                        <form
+                            className="tech-form"
+                            method="POST"
+                            name="trade-inquiry"
+                            data-netlify="true"
+                            netlify-honeypot="bot-field"
+                        >
+                            <input type="hidden" name="form-name" value="trade-inquiry" />
+                            <input type="hidden" name="bot-field" />
+
                             <div className="form-row">
                                 <div className="form-group">
                                     <label>Full Name</label>
-                                    <input type="text" placeholder="John Doe" required />
+                                    <input type="text" name="name" placeholder="John Doe" required />
                                 </div>
                                 <div className="form-group">
                                     <label>Company Name</label>
-                                    <input type="text" placeholder="Global Traders Ltd." required />
+                                    <input type="text" name="company" placeholder="Global Traders Ltd." required />
                                 </div>
                             </div>
                             <div className="form-row">
                                 <div className="form-group">
                                     <label>Email Address</label>
-                                    <input type="email" placeholder="john@company.com" required />
+                                    <input type="email" name="email" placeholder="john@company.com" required />
                                 </div>
                                 <div className="form-group">
                                     <label>Phone / WhatsApp</label>
-                                    <input type="tel" placeholder="+1 234 567 890" required />
+                                    <input type="tel" name="phone" placeholder="+1 234 567 890" required />
                                 </div>
                             </div>
                             <div className="form-row">
                                 <div className="form-group">
                                     <label>Country</label>
-                                    <input type="text" placeholder="Destination Country" required />
+                                    <input type="text" name="country" placeholder="Destination Country" required />
                                 </div>
                                 <div className="form-group">
                                     <label>Product of Interest</label>
-                                    <select>
+                                    <select name="product">
                                         <option>Select Product</option>
                                         <option>Spices</option>
                                         <option>Grains</option>
@@ -125,7 +134,7 @@ const ContactPage = () => {
                             </div>
                             <div className="form-group">
                                 <label>Message / Requirements</label>
-                                <textarea rows="4" placeholder="Describe your requirement..."></textarea>
+                                <textarea name="message" rows="4" placeholder="Describe your requirement..."></textarea>
                             </div>
                             <button type="submit" className="btn btn-submit">
                                 Submit Trade Inquiry <Send size={18} style={{ marginLeft: '8px' }} />
