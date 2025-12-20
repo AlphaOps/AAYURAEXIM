@@ -169,7 +169,7 @@
     color: var(--nav-text);
     font-family: var(--font-heading);
     font-weight: 500;
-    font-size: 15px;
+    font-size: 19px;
     /* CORRECT SIZE per requests */
     cursor: pointer;
     text-decoration: none;
@@ -217,9 +217,9 @@
 .btn-cta {
     background: var(--btn-gradient);
     color: white;
-    height: 44px;
+    height: 52px;
     /* CORRECT HEIGHT */
-    padding: 0 24px;
+    padding: 0 28px;
     /* CORRECT PADDING */
     border-radius: 6px;
     /* Slightly tighter radius usually looks more corporate tech */
@@ -227,7 +227,7 @@
     font-weight: 600;
     text-transform: uppercase;
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     /* 14-15px equivalent */
     letter-spacing: 0.5px;
     transition: all 0.3s ease;

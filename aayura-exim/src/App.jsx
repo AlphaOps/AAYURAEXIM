@@ -11,6 +11,7 @@ import ContactPage from './pages/ContactPage';
 import BlogPage from './pages/BlogPage';
 import BlogPost from './components/BlogPost';
 import ProductCategory from './pages/ProductCategory';
+import ProductDetailPage from './pages/ProductDetailPage'; // New Import
 import './App.css';
 
 // Component to handle scroll to top on route change
@@ -36,6 +37,7 @@ function App() {
             <Route path="/blog/:id" element={<BlogPost />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/category/:id" element={<ProductCategory />} />
+            <Route path="/product/:id" element={<ProductDetailPage />} /> {/* New Route */}
           </Routes>
         </main>
         <Footer />

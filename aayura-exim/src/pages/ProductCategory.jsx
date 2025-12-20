@@ -25,7 +25,7 @@ const ProductCategory = () => {
 
     return (
         <div className="product-category-page">
-            <section className="hero-small" style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(${heroImg})` }}>
+            <section className="hero-small" style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${heroImg})` }}>
                 <div className="container">
                     <h1>{data.title}</h1>
                     <p>{data.subtitle}</p>
@@ -44,7 +44,11 @@ const ProductCategory = () => {
                                     <span className="badge">{item.category}</span>
                                     <h3>{item.name}</h3>
                                     <p>{item.desc}</p>
-                                    <a href="#contact" className="btn-link">Enquire Now →</a>
+                                    {item.id === 's1' ? (
+                                        <Link to={`/product/${item.id}`} className="btn-link">View Product Story →</Link>
+                                    ) : (
+                                        <Link to="/contact" className="btn-link">Enquire Now →</Link>
+                                    )}
                                 </div>
                             </div>
                         ))}

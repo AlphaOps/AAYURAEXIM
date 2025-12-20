@@ -30,7 +30,7 @@ import prodCoconutSemiHusked from '../assets/images/prod_coconut_semi_husked_v2.
 import prodDehydratedOnionWhiteFlakes from '../assets/images/prod_dehydrated_onion_white_flakes.png';
 import prodDehydratedGingerFlakes from '../assets/images/prod_dehydrated_ginger_flakes.png';
 import prodDehydratedPotatoFlakes from '../assets/images/prod_dehydrated_potato_flakes.png';
-import prodDehydratedGarlicGranules from '../assets/images/prod_dehydrated_garlic_granules.png';
+import prodDehydratedGarlicFlakes from '../assets/images/prod_dehydrated_garlic_flakes.png'; // New Import
 import prodChickpeasKabuli from '../assets/images/prod_chickpeas_kabuli.png'; // New Import
 import prodMungDal from '../assets/images/prod_mung_dal.png'; // New Import
 import prodToorDal from '../assets/images/prod_toor_dal.png'; // New Import
@@ -39,6 +39,9 @@ import prodAmlaFresh from '../assets/images/prod_amla_fresh.png'; // New Import
 import prodMintLeaves from '../assets/images/prod_mint_leaves.png'; // New Import
 import prodAshwagandhaRoots from '../assets/images/prod_ashwagandha_roots.png'; // New Import
 import prodAloeVera from '../assets/images/prod_aloe_vera.png'; // New Import
+import prodSteviaWholePowder from '../assets/images/prod_stevia_leaves_powder.png';
+import prodAmlaWholePowder from '../assets/images/prod_amla_whole_powder.png';
+import prodMintWholePowder from '../assets/images/prod_mint_leaves_powder.png';
 // Fallbacks/Pre-existing
 import subTurmeric from '../assets/images/sub_turmeric.png';
 import subChilli from '../assets/images/sub_chilli.png';
@@ -62,7 +65,53 @@ export const productData = {
         subtitle: "Authentic, aromatic, and premium quality spices directly from Indian farms.",
         heroImage: imgSpices,
         items: [
-            { id: "s1", name: "Cumin Seeds (Jeera)", desc: "High essential oil content, intense aroma, machine cleaned.", category: "Whole Spices", image: prodCuminSeeds },
+            {
+                id: "s1",
+                name: "Cumin Seeds (Jeera)",
+                scientificName: "Cuminum cyminum",
+                desc: "Premium Indian cumin seeds sourced from verified farms and processed to meet international export standards.",
+                category: "Whole Spices",
+                image: prodCuminSeeds,
+                // UNIVERSAL EXPORT SNAPSHOT
+                snapshot: {
+                    origin: "India",
+                    type: "Whole Spices (Dried Seeds)",
+                    processing: "Machine Cleaned / Sortex Cleaned",
+                    packaging: "25kg / 50kg / Customized",
+                    moq: "As per requirement",
+                    hsCode: "090931"
+                },
+                // UNIVERSAL PRODUCT STORY (2-PARAGRAPH TEMPLATE)
+                story: {
+                    heading: "The Story Behind Our Cumin Seeds",
+                    // Para 1: Farm/Sourcing (Matches Image 1)
+                    p1: "Our Cumin Seeds (Jeera) are sourced from carefully selected growing regions of India known for favorable climate, soil conditions, and consistent crop quality. We work directly with experienced farmers and sourcing partners to ensure purity, traceability, and reliable supply.",
+                    // Para 2: Processing/Quality (Matches Image 2)
+                    p2: "After harvesting, the product undergoes controlled cleaning, grading, and quality inspection to meet export requirements. Each batch is handled with care to preserve its natural characteristics, aroma, color, and shelf life during international transportation."
+                },
+                // SPECS (FROM PDF / TEMPLATE)
+                specs: [
+                    { label: "Purity", value: "As per export grade (99% / 99.5%)" },
+                    { label: "Moisture", value: "Export standard (Max 9-10%)" },
+                    { label: "Cleaning", value: "Machine Cleaned / Sortex" },
+                    { label: "Admixture", value: "Max 1%" },
+                    { label: "Flavor", value: "Warm, Earthy, Spicy-Sweet" },
+                    { label: "Shelf Life", value: "Long shelf stability (24 Months)" }
+                ],
+                // COMPLIANCE
+                compliance: {
+                    text: "Our Cumin Seeds are packed in export-compliant packaging to ensure product safety and quality during international shipment.",
+                    packaging: ["PP Bags (25kg/50kg)", "Jute Bags", "Paper Bags", "Customized Solutions"],
+                    certs: ["FSSAI", "Spices Board", "ISO", "HACCP"]
+                },
+                // IDEAL FOR
+                idealFor: [
+                    "Importers & Bulk Traders",
+                    "Wholesalers & Distributors",
+                    "Food Manufacturers",
+                    "Private Label Buyers"
+                ]
+            },
             { id: "s2", name: "Turmeric Finger", desc: "High curcumin content, vibrant yellow color, polished & unpolished.", category: "Whole Spices", image: subTurmeric },
             { id: "s3", name: "Ginger", desc: "Premium dried ginger roots, bleached and unbleached options.", category: "Whole Spices", image: prodDryGinger },
             { id: "s4", name: "Black Pepper Whole", desc: "Bold black peppercorns, TGSEB and MG-1 grades available.", category: "Whole Spices", image: prodBlackPepper },
@@ -83,7 +132,7 @@ export const productData = {
             { id: "d2", name: "Dehydrated White Onion Flakes", desc: "Sweet and sharp white onion flakes, export quality.", category: "Dehydrated Onion", image: prodDehydratedOnionWhiteFlakes },
             { id: "d3", name: "Dehydrated Ginger Flakes", desc: "Dried ginger slices, spicy and aromatic.", category: "Dehydrated", image: prodDehydratedGingerFlakes },
             { id: "d4", name: "Dehydrated Potato Flakes", desc: "Ready-to-use potato flakes for mash and bakery products.", category: "Dehydrated", image: prodDehydratedPotatoFlakes },
-            { id: "d5", name: "Dehydrated Garlic Granules", desc: "Strong flavor, used in seasonings and sauces.", category: "Dehydrated", image: prodDehydratedGarlicGranules }
+            { id: "d5", name: "Dehydrated Garlic Flakes", desc: "Aromatic dried garlic flakes with pungent flavor, ready for culinary use.", category: "Dehydrated", image: prodDehydratedGarlicFlakes }
         ]
     },
     "herbal-products": {
@@ -91,9 +140,9 @@ export const productData = {
         subtitle: "Nature's best healing herbs processed for pharmaceutical and cosmetic use.",
         heroImage: imgHerbal,
         items: [
-            { id: "h1", name: "Stevia Leaves", desc: "Natural sweetener, zero calorie, high purity.", category: "Herbs", image: prodSteviaLeaves },
-            { id: "h2", name: "Amla (Indian Gooseberry)", desc: "Dried amla, rich in Vitamin C, for immunity and hair care.", category: "Herbs", image: prodAmlaFresh },
-            { id: "h3", name: "Mint Leaves", desc: "Aromatic dried mint for culinary and medicinal use.", category: "Herbs", image: prodMintLeaves },
+            { id: "h1", name: "Stevia Leaves – Whole & Powder", desc: "Naturally dried stevia leaves and finely ground stevia powder, used as a zero-calorie natural sweetener.", category: "Herbs", image: prodSteviaWholePowder },
+            { id: "h2", name: "Amla (Indian Gooseberry) – Whole & Powder", desc: "Whole dried amla and finely milled amla powder, rich in Vitamin C, processed under hygienic export conditions.", category: "Herbs", image: prodAmlaWholePowder },
+            { id: "h3", name: "Mint Leaves – Whole & Powder", desc: "Aromatic dried mint leaves available in dried leaf form and powdered form for culinary and medicinal use.", category: "Herbs", image: prodMintWholePowder },
             { id: "h4", name: "Ashwagandha", desc: "Premium adaptogen herb for stress relief and vitality.", category: "Herbs", image: prodAshwagandhaRoots },
             { id: "h5", name: "Aloe Vera", desc: "Dried aloe leaves/powder for cosmetic applications.", category: "Herbs", image: prodAloeVera },
             { id: "h6", name: "Moringa Powder", desc: "Superfood rich in vitamins and antioxidants.", category: "Herbs", image: subMoringa }
