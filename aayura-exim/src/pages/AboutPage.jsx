@@ -9,7 +9,6 @@ import certSpicesBoard from '../assets/images/cert_spices_board_new.png';
 import certIecBlue from '../assets/images/cert_iec_blue.png';
 import certGst from '../assets/images/cert_gst_new.png';
 import certHalal from '../assets/images/cert_halal_v3.png';
-import certMsme from '../assets/images/cert_msme_new.png';
 import certUdyogAadhar from '../assets/images/cert_udyog_aadhar_new.png';
 import certCoconut from '../assets/images/cert_coconut_board_new.png';
 import CtaBanner from '../components/CtaBanner';

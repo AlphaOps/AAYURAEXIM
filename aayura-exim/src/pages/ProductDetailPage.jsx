@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { productData } from '../data/products';
 import './ProductDetailPage.css';
@@ -14,16 +14,17 @@ import farmImage from '../assets/images/about_farm_to_port.png';
 const ProductDetailPage = () => {
     const { id } = useParams();
     const navigate = useNavigate();
-    const [product, setProduct] = useState(null);
-
-    // Find product across all categories
-    useEffect(() => {
+    // Find product across all categories using useMemo (prevents setState loop)
+    const product = React.useMemo(() => {
         let foundProduct = null;
         Object.values(productData).forEach(category => {
             const item = category.items.find(p => p.id === id);
             if (item) foundProduct = item;
         });
-        setProduct(foundProduct);
+        return foundProduct;
+    }, [id]);
+
+    useEffect(() => {
         window.scrollTo(0, 0);
     }, [id]);
 

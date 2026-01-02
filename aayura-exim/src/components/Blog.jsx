@@ -110,11 +110,12 @@ const Blog = () => {
                                 <div className="news-thumb">
                                     <img src={newsThumb} alt="Trade News" />
                                 </div>
-                                <div className="news-details">
+                                <div className="news-content">
                                     <span className="category-tag" style={{ backgroundColor: item.color }}>{item.category}</span>
                                     <h4>{item.title}</h4>
-                                    <span className="news-date">{item.date}</span>
+                                    <p className="news-date">{item.date} • {item.source}</p>
                                     <p>{item.summary}</p>
+                                    <a href="#" className="read-more">Read Full Story →</a>
                                 </div>
                             </div>
                         ))}
@@ -130,14 +131,12 @@ const Blog = () => {
                         <div className="country-map">
                             <img src={countryMap} alt="World Trade Map" />
                         </div>
-                        <div className="country-cards">
-                            {countryNewsData.map((item, index) => (
-                                <div className="country-card" key={index}>
-                                    <h4>{item.country}</h4>
-                                    <p>{item.title}</p>
-                                </div>
-                            ))}
-                        </div>
+                        {countryNewsData.map((item, index) => (
+                            <div className="country-card" key={index}>
+                                <h4>{item.country}</h4>
+                                <p>{item.title}</p>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </section>
@@ -220,7 +219,7 @@ const Blog = () => {
                     <div className="compliance-content">
                         <h3 className="section-heading-left">Regulatory & Compliance Watch</h3>
                         <div className="accordion">
-                            {blogSections.compliance.map((item, index) => (
+                            {blogSections.compliance.map((item) => (
                                 <div className="accordion-item" key={item.id}>
                                     <div className="accordion-header">
                                         <h4>{item.title}</h4>

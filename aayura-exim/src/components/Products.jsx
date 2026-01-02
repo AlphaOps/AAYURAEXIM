@@ -5,7 +5,7 @@ import './Products.css';
 import imgSpices from '../assets/images/product_spices.png';
 import imgVegetables from '../assets/images/product_vegetables.png';
 import imgDehydrated from '../assets/images/product_dehydrated.png';
-import imgRice from '../assets/images/product_rice.png';
+
 import imgHerbal from '../assets/images/product_herbal.png';
 
 // import imgSeafood from '../assets/images/product_seafood.png'; // Removed

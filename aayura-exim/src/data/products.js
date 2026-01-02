@@ -1,10 +1,9 @@
 // Product Images
+import imgHerbal from '../assets/images/product_herbal.png';
 import imgSpices from '../assets/images/product_spices.png';
 import imgVegetables from '../assets/images/product_vegetables.png';
 import imgDehydrated from '../assets/images/product_dehydrated.png';
-import imgRice from '../assets/images/product_rice.png';
-import imgHerbal from '../assets/images/product_herbal.png';
-import imgSeafood from '../assets/images/product_seafood.png';
+
 import imgFruits from '../assets/images/product_fruits.png'; // Added missing import
 
 // Sub Product Images (Specific)
@@ -31,14 +30,10 @@ import prodDehydratedOnionWhiteFlakes from '../assets/images/prod_dehydrated_oni
 import prodDehydratedGingerFlakes from '../assets/images/prod_dehydrated_ginger_flakes.png';
 import prodDehydratedPotatoFlakes from '../assets/images/prod_dehydrated_potato_flakes.png';
 import prodDehydratedGarlicFlakes from '../assets/images/prod_dehydrated_garlic_flakes.png'; // New Import
-import prodChickpeasKabuli from '../assets/images/prod_chickpeas_kabuli.png'; // New Import
-import prodMungDal from '../assets/images/prod_mung_dal.png'; // New Import
-import prodToorDal from '../assets/images/prod_toor_dal.png'; // New Import
-import prodSteviaLeaves from '../assets/images/prod_stevia_leaves.png'; // New Import
-import prodAmlaFresh from '../assets/images/prod_amla_fresh.png'; // New Import
-import prodMintLeaves from '../assets/images/prod_mint_leaves.png'; // New Import
-import prodAshwagandhaRoots from '../assets/images/prod_ashwagandha_roots.png'; // New Import
-import prodAloeVera from '../assets/images/prod_aloe_vera.png'; // New Import
+
+import prodAshwagandhaRoots from '../assets/images/prod_ashwagandha_roots.png'; // Restored Import
+import prodAloeVera from '../assets/images/prod_aloe_vera.png'; // Restored Import
+
 import prodSteviaWholePowder from '../assets/images/prod_stevia_leaves_powder.png';
 import prodAmlaWholePowder from '../assets/images/prod_amla_whole_powder.png';
 import prodMintWholePowder from '../assets/images/prod_mint_leaves_powder.png';
@@ -50,15 +45,7 @@ import subOnionRed from '../assets/images/sub_onion_red.png';
 import subMoringa from '../assets/images/sub_moringa.png';
 
 // We will map these dynamically or use default category images until specific ones are generated
-const defaultImages = {
-    spices: imgSpices,
-    veg: imgVegetables,
-    dehydrated: imgDehydrated,
-    rice: imgRice,
-    herbal: imgHerbal,
-    seafood: imgSeafood,
-    fruits: imgFruits
-};
+
 
 export const productData = {
     "indian-spices": {

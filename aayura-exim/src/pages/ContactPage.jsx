@@ -12,11 +12,6 @@ const ContactPage = () => {
         window.scrollTo(0, 0);
     }, []);
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        alert("Thank you for your inquiry. Our export team will contact you shortly.");
-    };
-
     const handleScrollToForm = () => {
         const formSection = document.getElementById('contact-form');
         if (formSection) {

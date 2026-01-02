@@ -8,7 +8,6 @@ import certSpicesBoard from '../assets/images/cert_spices_board_new.png'; // Upd
 import certIecBlue from '../assets/images/cert_iec_blue.png';
 import certGst from '../assets/images/cert_gst_new.png'; // Updated GST Image
 import certHalal from '../assets/images/cert_halal_v3.png'; // Updated Halal Image (v3)
-import certMsme from '../assets/images/cert_msme_new.png'; // Updated MSME Image
 import certUdyogAadhar from '../assets/images/cert_udyog_aadhar_new.png'; // Updated Udyog Aadhar Image
 import certCoconut from '../assets/images/cert_coconut_board_new.png'; // Updated Coconut Image
 

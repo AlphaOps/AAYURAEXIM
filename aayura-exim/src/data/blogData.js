@@ -7,7 +7,7 @@ import imgQuoteBg from '../assets/images/blog_quote_bg.png';
 import imgFaq from '../assets/images/blog_faq_icons.png';
 
 // Import existing blog images for re-use or related
-import imgHero from '../assets/images/blog_hero.png';
+
 import imgFeatured from '../assets/images/blog_featured.png';
 
 export const blogPosts = [
