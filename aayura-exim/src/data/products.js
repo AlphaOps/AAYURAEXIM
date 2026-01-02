@@ -56,7 +56,8 @@ const defaultImages = {
     dehydrated: imgDehydrated,
     rice: imgRice,
     herbal: imgHerbal,
-    seafood: imgSeafood
+    seafood: imgSeafood,
+    fruits: imgFruits
 };
 
 export const productData = {
@@ -164,7 +165,7 @@ export const productData = {
     "fresh-fruits": {
         title: "Fresh Fruits",
         subtitle: "Premium export-quality fruits, handpicked for sweetness and freshness.",
-        heroImage: prodMango,
+        heroImage: imgFruits,
         items: [
             { id: "f5", name: "Banana", desc: "Cavendish bananas, spotless yellow.", category: "Fruits", image: prodBanana },
             { id: "f6", name: "Pomegranate", desc: "Bhagwa variety, deep red arils, sweet taste.", category: "Fruits", image: prodPomegranate },
